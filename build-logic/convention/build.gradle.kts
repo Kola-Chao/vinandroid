@@ -49,6 +49,13 @@ gradlePlugin {
             id = "vinandroid.android.application.compose"
             implementationClass = "com.example.buildlogic.AndroidApplicationComposeConventionPlugin"
         }
-
+        register("androidLibrary") {
+            id = "vinandroid.android.library"
+            implementationClass = "com.example.buildlogic.AndroidLibraryConventionPlugin"
+        }
+        register("hilt") {
+            id = "vinandroid.hilt"
+            implementationClass = "com.example.buildlogic.HiltConventionPlugin"
+        }
     }
 }

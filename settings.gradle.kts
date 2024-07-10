@@ -35,4 +35,5 @@ rootProject.name = "vinandroid"
 
 
 include(":app")
+include(":core:network")
 
