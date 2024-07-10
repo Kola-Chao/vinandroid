@@ -1,20 +1,20 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.vinandroid.android.application)
+    alias(libs.plugins.vinandroid.android.application.compose)
 }
 
 android {
     namespace = "com.example.vinandroid"
-    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.vinandroid"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 100
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
@@ -26,13 +26,19 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+
+    packaging {
+        resources {
+            excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+        }
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
     }
+
+    namespace = "com.example.vinandroid"
 }
 
 dependencies {
@@ -43,4 +49,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.hilt.android)
 }
