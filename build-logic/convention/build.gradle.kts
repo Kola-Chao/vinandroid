@@ -57,5 +57,9 @@ gradlePlugin {
             id = "vinandroid.hilt"
             implementationClass = "com.example.buildlogic.HiltConventionPlugin"
         }
+        register("jvmLibrary") {
+            id = "vinandroid.jvm.library"
+            implementationClass = "com.example.buildlogic.JvmLibraryConventionPlugin"
+        }
     }
 }

@@ -42,6 +42,8 @@ android {
 }
 
 dependencies {
+//    implementation(project(":core:common"))
+//    implementation(project(":core:data"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -52,4 +54,5 @@ dependencies {
 
     implementation(libs.hilt.android)
     implementation(libs.coil.kt)
+    implementation(libs.androidx.metrics)
 }

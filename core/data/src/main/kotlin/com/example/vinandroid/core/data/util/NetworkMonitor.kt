@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 The Android Open Source Project
+ * Copyright 2022 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,28 +14,13 @@
  * limitations under the License.
  */
 
-pluginManagement {
-    includeBuild("build-logic")
-    repositories {
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
+package com.example.vinandroid.core.data.util
+
+import kotlinx.coroutines.flow.Flow
+
+/**
+ * Utility for reporting app connectivity status
+ */
+interface NetworkMonitor {
+    val isOnline: Flow<Boolean>
 }
-
-dependencyResolutionManagement {
-    repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-
-rootProject.name = "vinandroid"
-
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-include(":app")
-include(":core:network")
-include(":core:data")
-include(":core:common")
-
