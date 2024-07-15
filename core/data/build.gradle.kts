@@ -22,10 +22,7 @@ plugins {
 }
 
 android {
-    buildFeatures {
-        buildConfig = true
-    }
-    namespace = "com.google.samples.apps.nowinandroid.core.data"
+    namespace = "com.example.vinandroid.core.data"
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
@@ -38,9 +35,8 @@ android {
 //}
 
 dependencies {
-    api(project(":core:common"))
+    api(projects.core.common)
 //    api(projects.core.database)
-//    api(projects.core.datastore)
 //    api(projects.core.network)
 
 //    implementation(projects.core.analytics)

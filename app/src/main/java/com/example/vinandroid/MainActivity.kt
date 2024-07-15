@@ -2,6 +2,7 @@ package com.example.vinandroid
 
 import androidx.activity.ComponentActivity
 import androidx.metrics.performance.JankStats
+import com.example.vinandroid.core.data.util.NetworkMonitor
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -10,8 +11,8 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var lazyStats: dagger.Lazy<JankStats>
 
-//    @Inject
-//    lateinit var networkMonitor: NetworkMonitor
+    @Inject
+    lateinit var networkMonitor: NetworkMonitor
 
     override fun onResume() {
         super.onResume()

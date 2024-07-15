@@ -26,7 +26,7 @@ import android.net.NetworkRequest.Builder
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import androidx.core.content.getSystemService
-import androidx.tracing.trace
+import  androidx.core.os.trace
 import com.example.vinandroid.core.common.Dispatcher
 import com.example.vinandroid.core.common.ViaDispatchers
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -55,6 +55,10 @@ internal class ConnectivityManagerNetworkMonitor @Inject constructor(
              * The callback's methods are invoked on changes to *any* network matching the [NetworkRequest],
              * not just the active network. So we can simply track the presence (or absence) of such [Network].
              */
+            /**
+             * The callback's methods are invoked on changes to *any* network matching the [NetworkRequest],
+             * not just the active network. So we can simply track the presence (or absence) of such [Network].
+             */
             val callback = object : NetworkCallback() {
 
                 private val networks = mutableSetOf<Network>()
@@ -76,6 +80,10 @@ internal class ConnectivityManagerNetworkMonitor @Inject constructor(
                     .build()
                 connectivityManager.registerNetworkCallback(request, callback)
             }
+
+            /**
+             * Sends the latest connectivity status to the underlying channel.
+             */
 
             /**
              * Sends the latest connectivity status to the underlying channel.

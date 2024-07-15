@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.vinandroid.android.application)
     alias(libs.plugins.vinandroid.android.application.compose)
+    alias(libs.plugins.vinandroid.android.application.flavors)
 }
 
 android {
@@ -18,6 +19,8 @@ android {
     }
 
     buildTypes {
+        debug {
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -37,13 +40,11 @@ android {
             isIncludeAndroidResources = true
         }
     }
-
-    namespace = "com.example.vinandroid"
 }
 
 dependencies {
-//    implementation(project(":core:common"))
-//    implementation(project(":core:data"))
+//    implementation(projects.core.common)
+    implementation(projects.core.data)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

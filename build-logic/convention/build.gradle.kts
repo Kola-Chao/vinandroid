@@ -61,5 +61,9 @@ gradlePlugin {
             id = "vinandroid.jvm.library"
             implementationClass = "com.example.buildlogic.JvmLibraryConventionPlugin"
         }
+        register("androidFlavors"){
+            id = "vinandroid.android.application.flavors"
+            implementationClass = "com.example.buildlogic.AndroidApplicationFlavorsConventionPlugin"
+        }
     }
 }
